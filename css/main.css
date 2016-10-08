@@ -1,0 +1,42 @@
+body {
+	background: #a0a0a0;
+}
+
+a {
+	text-decoration: none;
+	color: #ff1100;
+}
+ 
+a:hover {
+	text-decoration: underline;
+}
+
+ul, ol {
+	margin-top: 0.2em;
+}
+
+#container {
+	width: 705px;
+	position: relative;
+	margin: auto;
+}
+
+#box {
+	width: 700px;
+	height: 700px;
+	background: #f0f0f0;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 2em;
+	border-radius: 20px;
+	text-shadow: 2px 2px 2px #d0d0e0;
+	font-size: 1.2em;
+}
+
+#box.boxshadow {
+	background: #d0d0e0;
+	left: 5px;
+	top: 5px;
+	z-index: -1;
+}

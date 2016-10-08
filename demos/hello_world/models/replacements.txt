@@ -1,0 +1,9 @@
+baked-baked_baked_initialShadingGroup_pCube7SG_pCube7SG-pCube7.tif
+lightmap.jpg
+
+,"colorAmbient":[0.0,0.0,0.0]
+
+,"mapDiffuseAnistropy":4
+
+transparency
+opacity
