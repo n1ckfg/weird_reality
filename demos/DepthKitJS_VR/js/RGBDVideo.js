@@ -38,9 +38,8 @@
 
 		var linesMaterial = new THREE.ShaderMaterial( {
 			uniforms: {
-
 				"map": { type: "t", value: imageTexture },
-				"opacity": { type: "f", value: 0.25 },
+				"opacity": { type: "f", value: 0.75 }, // 0.25
 				"mindepth" : { type : "f", value : properties.mindepth },
 				"maxdepth" : { type : "f", value : properties.maxdepth }
 			},
@@ -60,7 +59,7 @@
 		var pointsMaterial = new THREE.ShaderMaterial( {
 			uniforms: {
 				"map": { type: "t", value: imageTexture },
-				"opacity": { type: "f", value: 0.25 },
+				"opacity": { type: "f", value: 0.75 }, // 0.25
 				"mindepth" : { type : "f", value : properties.mindepth },
 				"maxdepth" : { type : "f", value : properties.maxdepth }
 			},

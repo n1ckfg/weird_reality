@@ -11,7 +11,9 @@ function main() {
     // SETUP
     var renderer, scene, camera, controls, effect, clock, light;
     var boxWidth, params, manager, lastRender;
-    var angle, videos, objects;
+    //var angle;
+    var videos;
+    //var objects;
 
     function init() {
         // Setup three.js WebGL renderer. Note: Antialiasing is a big performance hit.
@@ -45,21 +47,24 @@ function main() {
         lastRender = 0;
 
 
-    	angle = ( Math.PI * 2 ) / VideoFiles.length;
+    	//angle = ( Math.PI * 2 ) / VideoFiles.length;
     	videos = [];
-    	objects = [];
+    	//objects = [];
 
     	var geometry = new THREE.IcosahedronGeometry( 400, 0 );
 
     	for ( var i = 0; i < VideoFiles.length; i++ ) {
     		var video = new RGBDVideo( VideoFiles[i] );
-    		video.position.x = Math.sin( i * angle ) * 800;
-    		video.position.z = Math.cos( i * angle ) * 800;
-    		video.rotation.y = i * angle;
+    		//video.position.x = Math.sin( i * angle ) * 800;
+    		//video.position.z = Math.cos( i * angle ) * 800;
+    		//video.rotation.y = i * angle;
+    		video.position.set(10, 0, -1100);
+    		video.rotation.set(0, 270, 0);
 
     		scene.add( video );
     		videos.push( video );
 
+    		/*
     		var sphere = new THREE.Mesh( geometry );
     		sphere.position.x = Math.sin( i * angle ) * 500;
     		sphere.position.y = -100;
@@ -70,6 +75,7 @@ function main() {
     		objects.push( sphere );
 
     		sphere.material.opacity = 0.75;
+    		*/
     	}
     }
 
@@ -86,6 +92,7 @@ function main() {
 
     function animate(timestamp) {
         render(timestamp);
+
         requestAnimationFrame(animate);
     }
 
