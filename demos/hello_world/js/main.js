@@ -5,7 +5,7 @@ var geometry, material, cube, skybox;
 var animation, ground, groundMaterial, planeGeometry;
 var skySphere, skySphereGeo, skySphereMat, skySphereTextureLoader;
 
-var worm_loader, worm_skinnedMesh, worm_mixer;
+//var worm_loader, worm_skinnedMesh, worm_mixer;
 var polyman_loader, polyman_skinnedMesh, polyman_mixer;
 var hallway_loader, hallway_mesh;
 
@@ -30,10 +30,10 @@ function main() {
     ground.rotation.x = -Math.PI/2;
     //scene.add( ground );
 
+    /*
     worm_loader = new THREE.JSONLoader();
     
     worm_loader.load("./models/worm.json", function(geometry, materials) {
-
         for (var k in materials) {
             materials[k].skinning = true;
         }
@@ -45,13 +45,12 @@ function main() {
 
         //worm_mixer = new THREE.AnimationMixer( worm_skinnedMesh );
         //worm_mixer.addAction( new THREE.AnimationAction( worm_skinnedMesh.geometry.animations[0] ) );                 
-
     });
+    */
 
     polyman_loader = new THREE.JSONLoader();
 
     polyman_loader.load("./models/polyman_anim.json", function(geometry, materials) { 
-
         for ( var k in materials ) {
             materials[k].skinning = true;
         }
@@ -64,14 +63,12 @@ function main() {
 
         polyman_mixer = new THREE.AnimationMixer( polyman_skinnedMesh );
         polyman_mixer.addAction( new THREE.AnimationAction( polyman_skinnedMesh.geometry.animations[0] ) );                    
-
     });
 
     
     hallway_loader = new THREE.ColladaLoader();
     hallway_loader.options.convertUpAxis = true;
     hallway_loader.load("./models/hallway/hallway.dae", function(collada) {
-
         hallway_mesh = collada.scene;
 
         hallway_mesh.traverse(function(child) {
@@ -121,7 +118,10 @@ function main() {
     function animate(timestamp) {
         var delta = clock.getDelta();
 
-        if( worm_mixer ) worm_mixer.update( delta );
+        //if( worm_mixer ) {
+            //worm_mixer.update( delta );
+        //}
+
         if( polyman_mixer ){
             polyman_mixer.update( delta );
 
